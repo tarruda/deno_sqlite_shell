@@ -68,7 +68,6 @@ export async function connect(databasePath?: string): Promise<Shell> {
     }
   })();
   if (!st || !st.isFile) {
-    console.error(`downloading sqlite3 binary to ${sqliteProgram}`);
     await downloadSqlite(sqliteProgram);
   }
   return Shell.create({ sqliteProgram, databasePath });
