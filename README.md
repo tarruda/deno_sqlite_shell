@@ -14,7 +14,7 @@ delegating actual SQLite library usage to a child process. Also it doesn't have
 prepared statements, so performance can be hurt.
 
 ```typescript
-import { Shell } from "https://deno.land/x/sqlite-shell/shell.ts";
+import { Shell } from "https://deno.land/x/sqlite_shell/mod.ts";
 
 // Open a database by creating a Shell instance
 const shell = await Shell.create({databasePath: "test.db"});
@@ -49,7 +49,7 @@ transparently like in other SQLite wrapper modules. If you SELECT a column that
 might have binary data, it must be encoded to hex and then decoded on JS side:
 
 ```typescript
-import { Shell } from "https://deno.land/x/sqlite-shell/shell.ts";
+import { Shell } from "https://deno.land/x/sqlite_shell/mod.ts";
 import { decodeString } from "https://deno.land/std/encoding/hex.ts";
 
 const shell = await Shell.create({databasePath: "test.db"});
